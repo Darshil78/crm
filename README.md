@@ -5,7 +5,7 @@ CRM Web Application (Django + PostgreSQL)
 This is a Customer Relationship Management (CRM) web application built using Django and PostgreSQL. The system helps manage customers, products, and orders efficiently with a user-friendly interface and secure authentication system.
 
 🚀 Features
-User Authentication (Register, Login, Logout)
+User Authentication (Register, Login, Logout) 
 Customer Management
 Product Management
 Order Management
