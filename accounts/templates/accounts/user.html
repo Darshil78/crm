@@ -1,0 +1,84 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+
+<!-- Stats Cards -->
+<br>
+<div class="row">
+    <!-- TOTAL ORDERS -->
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="total-orders">
+                <div class="card-header">
+                    <h5 class="card-title">Total Orders</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{ total_orders }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDERS DELIVERED -->
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="orders-delivered">
+                <div class="card-header">
+                    <h5 class="card-title">Orders Delivered</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{ delivered }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDERS PENDING -->
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="orders-pending">
+                <div class="card-header">
+                    <h5 class="card-title">Orders Pending</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">{{ pending }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<!-- User Profile -->
+<div class="row">
+    <div class="col-md-12">
+        <h3>User Profile</h3>
+        <p><strong>Name:</strong> {{ customer.name }}</p>
+        <p><strong>Email:</strong> {{ customer.email }}</p>
+        <p><strong>Phone:</strong> {{ customer.phone }}</p>
+        <hr>
+    </div>
+</div>
+
+<!-- Recent Orders -->
+<div class="row">
+    <div class="col-md-12">
+        <h5>Your Recent Orders</h5>
+        <table class="table table-sm">
+            <tr>
+                <th>Product</th>
+                <th>Date Ordered</th>
+                <th>Status</th>
+            </tr>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.product.name }}</td>
+                <td>{{ order.date_created }}</td>
+                <td>{{ order.status }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}
